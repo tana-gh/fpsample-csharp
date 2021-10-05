@@ -1,9 +1,15 @@
+using System.Collections.Generic;
 
 namespace fpsample_csharp.Test
 {
+    internal enum TestEvent
+    {
+        ReadCalled,
+        WriteCalled
+    }
+
     internal class TestState
     {
-        public bool ReadCalled { get; set; } = false;
-        public bool WriteCalled { get; set; } = false;
+        public List<TestEvent> Events { get; } = new();
     }
 }

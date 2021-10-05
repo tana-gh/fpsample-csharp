@@ -16,8 +16,15 @@ namespace fpsample_csharp.Test
 
             await app.Run();
 
-            Assert.True(state.ReadCalled);
-            Assert.True(state.WriteCalled);
+            Assert.Equal
+            (
+                new TestEvent[]
+                {
+                    TestEvent.ReadCalled,
+                    TestEvent.WriteCalled
+                },
+                state.Events.ToArray()
+            );
         }
     }
 }

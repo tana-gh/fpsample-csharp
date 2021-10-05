@@ -14,7 +14,7 @@ namespace fpsample_csharp.Test
 
         public Task Write(Data data)
         {
-            State.WriteCalled = true;
+            State.Events.Add(TestEvent.WriteCalled);
             return Task.CompletedTask;
         }
     }

@@ -14,7 +14,7 @@ namespace fpsample_csharp.Test
 
         public Task<Data> Read()
         {
-            State.ReadCalled = true;
+            State.Events.Add(TestEvent.ReadCalled);
             return Task.FromResult(new Data("foo", 1));
         }
     }
